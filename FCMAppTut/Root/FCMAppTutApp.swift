@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct FCMAppTutApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A84EB5F288626480035A4EC /* FCMNotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB5E288626480035A4EC /* FCMNotificationsHandler.swift */; };
+		4A84EB61288685110035A4EC /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB60288685110035A4EC /* ContactsModel.swift */; };
+		4A84EB632886ED2A0035A4EC /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB622886ED290035A4EC /* ContentViewModel.swift */; };
+		4A84EB682886F4D30035A4EC /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB60288685110035A4EC /* ContactsModel.swift */; };
+		4A84EB692886F4D30035A4EC /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB60288685110035A4EC /* ContactsModel.swift */; };
+		4A84EB6D2886F50B0035A4EC /* ContactsCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB6B2886F50B0035A4EC /* ContactsCD.xcdatamodeld */; };
+		4A84EB6F2886F6D00035A4EC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB6E2886F6D00035A4EC /* CoreDataManager.swift */; };
 		4AABD7E42881745900694E8B /* FCMAppTutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD7E32881745900694E8B /* FCMAppTutApp.swift */; };
 		4AABD7E62881745900694E8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD7E52881745900694E8B /* ContentView.swift */; };
 		4AABD7E82881745B00694E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AABD7E72881745B00694E8B /* Assets.xcassets */; };
@@ -14,6 +21,15 @@
 		4AABD7F52881745B00694E8B /* FCMAppTutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD7F42881745B00694E8B /* FCMAppTutTests.swift */; };
 		4AABD7FF2881745B00694E8B /* FCMAppTutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD7FE2881745B00694E8B /* FCMAppTutUITests.swift */; };
 		4AABD8012881745B00694E8B /* FCMAppTutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD8002881745B00694E8B /* FCMAppTutUITestsLaunchTests.swift */; };
+		4AABD819288176E700694E8B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4AABD818288176E700694E8B /* FirebaseAnalytics */; };
+		4AABD81B288176E700694E8B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4AABD81A288176E700694E8B /* FirebaseMessaging */; };
+		4AABD81D2881D44100694E8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD81C2881D44100694E8B /* AppDelegate.swift */; };
+		4AABD8212881D79D00694E8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AABD8202881D79C00694E8B /* GoogleService-Info.plist */; };
+		4AABD8222881D79D00694E8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AABD8202881D79C00694E8B /* GoogleService-Info.plist */; };
+		4AABD8232881D79D00694E8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AABD8202881D79C00694E8B /* GoogleService-Info.plist */; };
+		4AABD82728825A2E00694E8B /* FCMDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD82628825A2E00694E8B /* FCMDecoders.swift */; };
+		4AABD82828825A2E00694E8B /* FCMDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD82628825A2E00694E8B /* FCMDecoders.swift */; };
+		4AABD82928825A2E00694E8B /* FCMDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD82628825A2E00694E8B /* FCMDecoders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A84EB5E288626480035A4EC /* FCMNotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMNotificationsHandler.swift; sourceTree = "<group>"; };
+		4A84EB60288685110035A4EC /* ContactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
+		4A84EB622886ED290035A4EC /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		4A84EB6C2886F50B0035A4EC /* ContactsCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactsCD.xcdatamodel; sourceTree = "<group>"; };
+		4A84EB6E2886F6D00035A4EC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		4AABD7E02881745900694E8B /* FCMAppTut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCMAppTut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AABD7E32881745900694E8B /* FCMAppTutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMAppTutApp.swift; sourceTree = "<group>"; };
 		4AABD7E52881745900694E8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +65,11 @@
 		4AABD7FA2881745B00694E8B /* FCMAppTutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FCMAppTutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AABD7FE2881745B00694E8B /* FCMAppTutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMAppTutUITests.swift; sourceTree = "<group>"; };
 		4AABD8002881745B00694E8B /* FCMAppTutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMAppTutUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4AABD811288174EA00694E8B /* FCMAppTut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FCMAppTut.entitlements; sourceTree = "<group>"; };
+		4AABD8162881764100694E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4AABD81C2881D44100694E8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4AABD8202881D79C00694E8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4AABD82628825A2E00694E8B /* FCMDecoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMDecoders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AABD81B288176E700694E8B /* FirebaseMessaging in Frameworks */,
+				4AABD819288176E700694E8B /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +99,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A84EB642886F4650035A4EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4AABD7E52881745900694E8B /* ContentView.swift */,
+				4A84EB622886ED290035A4EC /* ContentViewModel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A84EB652886F47D0035A4EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A84EB60288685110035A4EC /* ContactsModel.swift */,
+				4AABD82628825A2E00694E8B /* FCMDecoders.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A84EB662886F48A0035A4EC /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A84EB6B2886F50B0035A4EC /* ContactsCD.xcdatamodeld */,
+				4A84EB6E2886F6D00035A4EC /* CoreDataManager.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		4A84EB672886F4AC0035A4EC /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4AABD7E32881745900694E8B /* FCMAppTutApp.swift */,
+				4AABD81C2881D44100694E8B /* AppDelegate.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		4A84EB6A2886F4DD0035A4EC /* FCM */ = {
+			isa = PBXGroup;
+			children = (
+				4A84EB5E288626480035A4EC /* FCMNotificationsHandler.swift */,
+			);
+			path = FCM;
+			sourceTree = "<group>";
+		};
 		4AABD7D72881745900694E8B = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +166,14 @@
 		4AABD7E22881745900694E8B /* FCMAppTut */ = {
 			isa = PBXGroup;
 			children = (
-				4AABD7E32881745900694E8B /* FCMAppTutApp.swift */,
-				4AABD7E52881745900694E8B /* ContentView.swift */,
+				4A84EB6A2886F4DD0035A4EC /* FCM */,
+				4A84EB672886F4AC0035A4EC /* Root */,
+				4A84EB662886F48A0035A4EC /* Core Data */,
+				4A84EB652886F47D0035A4EC /* Models */,
+				4A84EB642886F4650035A4EC /* Views */,
+				4AABD8202881D79C00694E8B /* GoogleService-Info.plist */,
+				4AABD8162881764100694E8B /* Info.plist */,
+				4AABD811288174EA00694E8B /* FCMAppTut.entitlements */,
 				4AABD7E72881745B00694E8B /* Assets.xcassets */,
 				4AABD7E92881745B00694E8B /* Preview Content */,
 			);
@@ -143,6 +221,10 @@
 			dependencies = (
 			);
 			name = FCMAppTut;
+			packageProductDependencies = (
+				4AABD818288176E700694E8B /* FirebaseAnalytics */,
+				4AABD81A288176E700694E8B /* FirebaseMessaging */,
+			);
 			productName = FCMAppTut;
 			productReference = 4AABD7E02881745900694E8B /* FCMAppTut.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +297,9 @@
 				Base,
 			);
 			mainGroup = 4AABD7D72881745900694E8B;
+			packageReferences = (
+				4AABD817288176E600694E8B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 4AABD7E12881745900694E8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +318,7 @@
 			files = (
 				4AABD7EB2881745B00694E8B /* Preview Assets.xcassets in Resources */,
 				4AABD7E82881745B00694E8B /* Assets.xcassets in Resources */,
+				4AABD8212881D79D00694E8B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AABD8222881D79D00694E8B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AABD8232881D79D00694E8B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +345,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AABD81D2881D44100694E8B /* AppDelegate.swift in Sources */,
 				4AABD7E62881745900694E8B /* ContentView.swift in Sources */,
 				4AABD7E42881745900694E8B /* FCMAppTutApp.swift in Sources */,
+				4AABD82728825A2E00694E8B /* FCMDecoders.swift in Sources */,
+				4A84EB61288685110035A4EC /* ContactsModel.swift in Sources */,
+				4A84EB6D2886F50B0035A4EC /* ContactsCD.xcdatamodeld in Sources */,
+				4A84EB6F2886F6D00035A4EC /* CoreDataManager.swift in Sources */,
+				4A84EB5F288626480035A4EC /* FCMNotificationsHandler.swift in Sources */,
+				4A84EB632886ED2A0035A4EC /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +361,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AABD82828825A2E00694E8B /* FCMDecoders.swift in Sources */,
+				4A84EB682886F4D30035A4EC /* ContactsModel.swift in Sources */,
 				4AABD7F52881745B00694E8B /* FCMAppTutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +373,8 @@
 			files = (
 				4AABD7FF2881745B00694E8B /* FCMAppTutUITests.swift in Sources */,
 				4AABD8012881745B00694E8B /* FCMAppTutUITestsLaunchTests.swift in Sources */,
+				4A84EB692886F4D30035A4EC /* ContactsModel.swift in Sources */,
+				4AABD82928825A2E00694E8B /* FCMDecoders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,12 +513,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FCMAppTut/FCMAppTut.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FCMAppTut/Preview Content\"";
 				DEVELOPMENT_TEAM = U8SLN7SHHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FCMAppTut/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -430,7 +531,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dubebytes.FCMAppTut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.travsim.FCMAppTut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -443,12 +544,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FCMAppTut/FCMAppTut.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FCMAppTut/Preview Content\"";
 				DEVELOPMENT_TEAM = U8SLN7SHHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FCMAppTut/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -459,7 +562,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dubebytes.FCMAppTut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.travsim.FCMAppTut;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -583,6 +686,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4AABD817288176E600694E8B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4AABD818288176E700694E8B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AABD817288176E600694E8B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		4AABD81A288176E700694E8B /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AABD817288176E600694E8B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4A84EB6B2886F50B0035A4EC /* ContactsCD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A84EB6C2886F50B0035A4EC /* ContactsCD.xcdatamodel */,
+			);
+			currentVersion = 4A84EB6C2886F50B0035A4EC /* ContactsCD.xcdatamodel */;
+			path = ContactsCD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4AABD7D82881745900694E8B /* Project object */;
 }
