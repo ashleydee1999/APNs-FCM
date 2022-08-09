@@ -20,11 +20,11 @@ class ContentViewModel: ObservableObject
     
     @Published var firstName = ""
     @Published var allContacts: [ContactsCD] = []
-    
-    let persistentContainer = CoreDataManager.shared.persistentContainer
+    let manager = CoreDataManager(modelName: "ContactsCD")
+
     //Initializer access level change now
     private init(){
-        fetchContacts()
+        fetchMessages()
     }
     
     func getLogs() {
@@ -79,65 +79,26 @@ class ContentViewModel: ObservableObject
         }
     }
     
-    // Core Data Functions
-    
-    func fetchContacts(){
-        let request = NSFetchRequest<ContactsCD>(entityName: "ContactsCD")
-        
-        do{
-            allContacts = try persistentContainer.viewContext.fetch(request)
-            
-//            let data = allContacts[0]
-//            
-//            print("Number 1: \(data.mobileNumbers!.numberList[0].number) Number 2: \(data.mobileNumbers!.numberList[1].number)")
-            
-            
-            /*
-             let result = try managedContext.fetch(fetchRequest)
-             
-             print("Your result: \(result)")
+    func fetchMessages() {
 
-             var i = 0
-             for data in result as! [NSManagedObject] {
-                 let mranges = data.value(forKey: "range") as! Ranges
-                 print(" range batch : \(i)")
-                 for element in mranges.ranges {
-                     print("location:\(element.location), length:\(element.length)")
-                 }
-                 i = i + 1
-             }
-             */
-        }catch{
-            print("Error: \(error) \n Localised Error: \(error.localizedDescription)")
+        let fetchRequest: NSFetchRequest<ContactsCD> = ContactsCD.fetchRequest()
+
+        manager.mainManagedObjectContext.performAndWait {
+            do {
+                let msgs = try fetchRequest.execute()
+                allContacts = msgs
+                for eachMsg in msgs {
+                    print(eachMsg.firstName ?? "NO firstName")
+                    print(eachMsg.lastName ?? "NO lastName")
+                }
+                if msgs.isEmpty {
+                    print("no data")
+                }
+            } catch {
+                print("error in fetching messages")
+                print(error.localizedDescription)
+            }
         }
-        
     }
     
-    func deleteContact(at offsets: IndexSet){
-        offsets.forEach { index in
-            let contact = allContacts[index]
-            persistentContainer.viewContext.delete(contact)
-        }
-        saveData()
-        
-    }
-    func saveContact(){
-        let contact = ContactsCD(context: persistentContainer.viewContext)
-        contact.firstName = firstName
-//        contact.lastName = selectedPriority.rawValue
-        saveData()
-    }
-    func updateContact(_ contact: ContactsCD){
-//        contact.isFavourite.toggle()
-        saveData()
-    }
-    
-    func saveData(){
-        do{
-            try persistentContainer.viewContext.save()
-            fetchContacts()
-        }catch{
-            print("Error: \(error) \n Localised Error: \(error.localizedDescription)")
-        }
-    }
 }

@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A4BC44328A15C8600AF192B /* FCMNotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB5E288626480035A4EC /* FCMNotificationsHandler.swift */; };
+		4A4BC44428A15D0600AF192B /* FCMDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD82628825A2E00694E8B /* FCMDecoders.swift */; };
+		4A4BC44628A16E5700AF192B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A4BC44528A16E5700AF192B /* GoogleService-Info.plist */; };
+		4A4BC44728A16E5700AF192B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A4BC44528A16E5700AF192B /* GoogleService-Info.plist */; };
 		4A84EB5F288626480035A4EC /* FCMNotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB5E288626480035A4EC /* FCMNotificationsHandler.swift */; };
 		4A84EB61288685110035A4EC /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB60288685110035A4EC /* ContactsModel.swift */; };
 		4A84EB632886ED2A0035A4EC /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB622886ED290035A4EC /* ContentViewModel.swift */; };
 		4A84EB682886F4D30035A4EC /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB60288685110035A4EC /* ContactsModel.swift */; };
 		4A84EB692886F4D30035A4EC /* ContactsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB60288685110035A4EC /* ContactsModel.swift */; };
 		4A84EB6D2886F50B0035A4EC /* ContactsCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB6B2886F50B0035A4EC /* ContactsCD.xcdatamodeld */; };
-		4A84EB6F2886F6D00035A4EC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB6E2886F6D00035A4EC /* CoreDataManager.swift */; };
+		4A84EB6F2886F6D00035A4EC /* CoreDataManagerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB6E2886F6D00035A4EC /* CoreDataManagerOld.swift */; };
 		4AABD7E42881745900694E8B /* FCMAppTutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD7E32881745900694E8B /* FCMAppTutApp.swift */; };
 		4AABD7E62881745900694E8B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD7E52881745900694E8B /* ContentView.swift */; };
 		4AABD7E82881745B00694E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AABD7E72881745B00694E8B /* Assets.xcassets */; };
@@ -24,12 +28,17 @@
 		4AABD819288176E700694E8B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4AABD818288176E700694E8B /* FirebaseAnalytics */; };
 		4AABD81B288176E700694E8B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4AABD81A288176E700694E8B /* FirebaseMessaging */; };
 		4AABD81D2881D44100694E8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD81C2881D44100694E8B /* AppDelegate.swift */; };
-		4AABD8212881D79D00694E8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AABD8202881D79C00694E8B /* GoogleService-Info.plist */; };
-		4AABD8222881D79D00694E8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AABD8202881D79C00694E8B /* GoogleService-Info.plist */; };
-		4AABD8232881D79D00694E8B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AABD8202881D79C00694E8B /* GoogleService-Info.plist */; };
 		4AABD82728825A2E00694E8B /* FCMDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD82628825A2E00694E8B /* FCMDecoders.swift */; };
 		4AABD82828825A2E00694E8B /* FCMDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD82628825A2E00694E8B /* FCMDecoders.swift */; };
 		4AABD82928825A2E00694E8B /* FCMDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AABD82628825A2E00694E8B /* FCMDecoders.swift */; };
+		4ABB9C5F289834AC009063E5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB9C5E289834AC009063E5 /* Extensions.swift */; };
+		4AF132FC2892136F00C805AD /* Service.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4AF132F52892136F00C805AD /* Service.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4AF1330228921FB200C805AD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF1330128921FB100C805AD /* CoreDataStack.swift */; };
+		4AF133042892208D00C805AD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF133032892208D00C805AD /* CoreDataManager.swift */; };
+		4AF1330A2892282300C805AD /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF132F72892136F00C805AD /* NotificationService.swift */; };
+		4AF1330B289228AC00C805AD /* ContactsCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A84EB6B2886F50B0035A4EC /* ContactsCD.xcdatamodeld */; };
+		4AF1330C289228B200C805AD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF133032892208D00C805AD /* CoreDataManager.swift */; };
+		4AF1330E28922BA200C805AD /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF1330128921FB100C805AD /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,14 +56,36 @@
 			remoteGlobalIDString = 4AABD7DF2881745900694E8B;
 			remoteInfo = FCMAppTut;
 		};
+		4AF132FA2892136F00C805AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AABD7D82881745900694E8B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4AF132F42892136F00C805AD;
+			remoteInfo = Service;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4A20C02528920A9E00324231 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4AF132FC2892136F00C805AD /* Service.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4A4BC44528A16E5700AF192B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A84EB5E288626480035A4EC /* FCMNotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMNotificationsHandler.swift; sourceTree = "<group>"; };
 		4A84EB60288685110035A4EC /* ContactsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModel.swift; sourceTree = "<group>"; };
 		4A84EB622886ED290035A4EC /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4A84EB6C2886F50B0035A4EC /* ContactsCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactsCD.xcdatamodel; sourceTree = "<group>"; };
-		4A84EB6E2886F6D00035A4EC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4A84EB6E2886F6D00035A4EC /* CoreDataManagerOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerOld.swift; sourceTree = "<group>"; };
 		4AABD7E02881745900694E8B /* FCMAppTut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCMAppTut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AABD7E32881745900694E8B /* FCMAppTutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMAppTutApp.swift; sourceTree = "<group>"; };
 		4AABD7E52881745900694E8B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,8 +99,14 @@
 		4AABD811288174EA00694E8B /* FCMAppTut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FCMAppTut.entitlements; sourceTree = "<group>"; };
 		4AABD8162881764100694E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4AABD81C2881D44100694E8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4AABD8202881D79C00694E8B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4AABD82628825A2E00694E8B /* FCMDecoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMDecoders.swift; sourceTree = "<group>"; };
+		4ABB9C5E289834AC009063E5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4AF132F52892136F00C805AD /* Service.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Service.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4AF132F72892136F00C805AD /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		4AF132F92892136F00C805AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AF1330028921EDC00C805AD /* Service.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Service.entitlements; sourceTree = "<group>"; };
+		4AF1330128921FB100C805AD /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		4AF133032892208D00C805AD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +127,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4AABD7F72881745B00694E8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AF132F22892136F00C805AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -121,7 +165,10 @@
 			isa = PBXGroup;
 			children = (
 				4A84EB6B2886F50B0035A4EC /* ContactsCD.xcdatamodeld */,
-				4A84EB6E2886F6D00035A4EC /* CoreDataManager.swift */,
+				4A84EB6E2886F6D00035A4EC /* CoreDataManagerOld.swift */,
+				4AF1330128921FB100C805AD /* CoreDataStack.swift */,
+				4AF133032892208D00C805AD /* CoreDataManager.swift */,
+				4ABB9C5E289834AC009063E5 /* Extensions.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -149,6 +196,7 @@
 				4AABD7E22881745900694E8B /* FCMAppTut */,
 				4AABD7F32881745B00694E8B /* FCMAppTutTests */,
 				4AABD7FD2881745B00694E8B /* FCMAppTutUITests */,
+				4AF132F62892136F00C805AD /* Service */,
 				4AABD7E12881745900694E8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -159,6 +207,7 @@
 				4AABD7E02881745900694E8B /* FCMAppTut.app */,
 				4AABD7F02881745B00694E8B /* FCMAppTutTests.xctest */,
 				4AABD7FA2881745B00694E8B /* FCMAppTutUITests.xctest */,
+				4AF132F52892136F00C805AD /* Service.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,8 +220,8 @@
 				4A84EB662886F48A0035A4EC /* Core Data */,
 				4A84EB652886F47D0035A4EC /* Models */,
 				4A84EB642886F4650035A4EC /* Views */,
-				4AABD8202881D79C00694E8B /* GoogleService-Info.plist */,
 				4AABD8162881764100694E8B /* Info.plist */,
+				4A4BC44528A16E5700AF192B /* GoogleService-Info.plist */,
 				4AABD811288174EA00694E8B /* FCMAppTut.entitlements */,
 				4AABD7E72881745B00694E8B /* Assets.xcassets */,
 				4AABD7E92881745B00694E8B /* Preview Content */,
@@ -205,6 +254,16 @@
 			path = FCMAppTutUITests;
 			sourceTree = "<group>";
 		};
+		4AF132F62892136F00C805AD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				4AF1330028921EDC00C805AD /* Service.entitlements */,
+				4AF132F72892136F00C805AD /* NotificationService.swift */,
+				4AF132F92892136F00C805AD /* Info.plist */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,10 +274,12 @@
 				4AABD7DC2881745900694E8B /* Sources */,
 				4AABD7DD2881745900694E8B /* Frameworks */,
 				4AABD7DE2881745900694E8B /* Resources */,
+				4A20C02528920A9E00324231 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4AF132FB2892136F00C805AD /* PBXTargetDependency */,
 			);
 			name = FCMAppTut;
 			packageProductDependencies = (
@@ -265,6 +326,23 @@
 			productReference = 4AABD7FA2881745B00694E8B /* FCMAppTutUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		4AF132F42892136F00C805AD /* Service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4AF132FD2892136F00C805AD /* Build configuration list for PBXNativeTarget "Service" */;
+			buildPhases = (
+				4AF132F12892136F00C805AD /* Sources */,
+				4AF132F22892136F00C805AD /* Frameworks */,
+				4AF132F32892136F00C805AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Service;
+			productName = Service;
+			productReference = 4AF132F52892136F00C805AD /* Service.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -285,6 +363,9 @@
 					4AABD7F92881745B00694E8B = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 4AABD7DF2881745900694E8B;
+					};
+					4AF132F42892136F00C805AD = {
+						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
@@ -307,6 +388,7 @@
 				4AABD7DF2881745900694E8B /* FCMAppTut */,
 				4AABD7EF2881745B00694E8B /* FCMAppTutTests */,
 				4AABD7F92881745B00694E8B /* FCMAppTutUITests */,
+				4AF132F42892136F00C805AD /* Service */,
 			);
 		};
 /* End PBXProject section */
@@ -318,7 +400,7 @@
 			files = (
 				4AABD7EB2881745B00694E8B /* Preview Assets.xcassets in Resources */,
 				4AABD7E82881745B00694E8B /* Assets.xcassets in Resources */,
-				4AABD8212881D79D00694E8B /* GoogleService-Info.plist in Resources */,
+				4A4BC44628A16E5700AF192B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +408,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AABD8222881D79D00694E8B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +415,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AABD8232881D79D00694E8B /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AF132F32892136F00C805AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A4BC44728A16E5700AF192B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,9 +439,12 @@
 				4AABD82728825A2E00694E8B /* FCMDecoders.swift in Sources */,
 				4A84EB61288685110035A4EC /* ContactsModel.swift in Sources */,
 				4A84EB6D2886F50B0035A4EC /* ContactsCD.xcdatamodeld in Sources */,
-				4A84EB6F2886F6D00035A4EC /* CoreDataManager.swift in Sources */,
+				4AF133042892208D00C805AD /* CoreDataManager.swift in Sources */,
+				4AF1330228921FB200C805AD /* CoreDataStack.swift in Sources */,
+				4A84EB6F2886F6D00035A4EC /* CoreDataManagerOld.swift in Sources */,
 				4A84EB5F288626480035A4EC /* FCMNotificationsHandler.swift in Sources */,
 				4A84EB632886ED2A0035A4EC /* ContentViewModel.swift in Sources */,
+				4ABB9C5F289834AC009063E5 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +469,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4AF132F12892136F00C805AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AF1330E28922BA200C805AD /* CoreDataStack.swift in Sources */,
+				4AF1330C289228B200C805AD /* CoreDataManager.swift in Sources */,
+				4AF1330A2892282300C805AD /* NotificationService.swift in Sources */,
+				4A4BC44428A15D0600AF192B /* FCMDecoders.swift in Sources */,
+				4AF1330B289228AC00C805AD /* ContactsCD.xcdatamodeld in Sources */,
+				4A4BC44328A15C8600AF192B /* FCMNotificationsHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -390,6 +494,11 @@
 			isa = PBXTargetDependency;
 			target = 4AABD7DF2881745900694E8B /* FCMAppTut */;
 			targetProxy = 4AABD7FB2881745B00694E8B /* PBXContainerItemProxy */;
+		};
+		4AF132FB2892136F00C805AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4AF132F42892136F00C805AD /* Service */;
+			targetProxy = 4AF132FA2892136F00C805AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -511,6 +620,7 @@
 		4AABD8052881745B00694E8B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FCMAppTut/FCMAppTut.entitlements;
@@ -542,6 +652,7 @@
 		4AABD8062881745B00694E8B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FCMAppTut/FCMAppTut.entitlements;
@@ -646,6 +757,60 @@
 			};
 			name = Release;
 		};
+		4AF132FE2892136F00C805AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Service/Service.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U8SLN7SHHG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Service/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Service;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.travsim.FCMAppTut.Service;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4AF132FF2892136F00C805AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Service/Service.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U8SLN7SHHG;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Service/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Service;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.travsim.FCMAppTut.Service;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -681,6 +846,15 @@
 			buildConfigurations = (
 				4AABD80B2881745B00694E8B /* Debug */,
 				4AABD80C2881745B00694E8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4AF132FD2892136F00C805AD /* Build configuration list for PBXNativeTarget "Service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AF132FE2892136F00C805AD /* Debug */,
+				4AF132FF2892136F00C805AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

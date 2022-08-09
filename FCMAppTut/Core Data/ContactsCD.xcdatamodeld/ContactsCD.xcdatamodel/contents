@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ContactsCD" representedClassName="ContactsCD" syncable="YES" codeGenerationType="class">
-        <attribute name="emails" optional="YES" attributeType="Transformable" customClassName="Emails"/>
         <attribute name="firstName" attributeType="String"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="lastName" attributeType="String"/>
-        <attribute name="mobileNumbers" optional="YES" attributeType="Transformable" valueTransformerName="" customClassName="MobileNumbers"/>
     </entity>
     <elements>
-        <element name="ContactsCD" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="ContactsCD" positionX="-63" positionY="-18" width="128" height="74"/>
     </elements>
 </model>

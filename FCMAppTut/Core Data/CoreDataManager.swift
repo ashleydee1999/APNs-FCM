@@ -2,127 +2,103 @@
 //  CoreDataManager.swift
 //  FCMAppTut
 //
-//  Created by Ashley Dube on 2022/07/19.
+//  Created by Ashley Dube on 2022/07/28.
 //
 
-import Foundation
+import SwiftUI
 import CoreData
+import UserNotifications
 
-class CoreDataManager {
+extension Notification.Name {
+    static let didReceiveNotification = Notification.Name(rawValue: "com.travsim.DidReceiveNotification")
+}
+
+final class CoreDataManager {
+    private let modelName: String
     
-    let decoder = JSONDecoder()
-    let persistentContainer: NSPersistentContainer
-    static let shared: CoreDataManager = CoreDataManager()
+    //MARK: - Initializer
     
+    init(modelName: String) {
+        self.modelName = modelName
+        setupNotificationHandling()
+    }
     
-    private init(){
-        persistentContainer = NSPersistentContainer(name: "ContactsCD")
-        persistentContainer.loadPersistentStores { description, error in
-            if let error = error {
-                fatalError("Unable to initialize Core Data \(error)")
-            }else{
-                print("Successfully loaded Core Data!")
+    //MARK: - ManagedObjectContext
+    
+    //MARK: Parent ManagedObjectContext
+    
+    private lazy var privateManagedObjectContext: NSManagedObjectContext = {
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.persistentStoreCoordinator = self.persistantStoreCoordinator
+        return context
+    }()
+    
+    //MARK: Child ManagedObjectContext
+    
+    private(set) lazy var mainManagedObjectContext: NSManagedObjectContext = {
+        let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context.parent = self.privateManagedObjectContext
+        return context
+    }()
+    
+    //MARK: - ManagedObjectModel
+    
+    private lazy var managedObjectModel: NSManagedObjectModel = {
+        guard let dataModelUrl = Bundle.main.url(forResource: self.modelName, withExtension: "momd") else { fatalError("unable to find data model url") }
+        guard let dataModel = NSManagedObjectModel(contentsOf: dataModelUrl) else { fatalError("unable to find data model") }
+        return dataModel
+    }()
+    
+    //MARK: - PersistantStoreCoordinator
+    
+    private lazy var persistantStoreCoordinator: NSPersistentStoreCoordinator = {
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        let fileManager = FileManager.default
+        let storeName = "\(self.modelName).sqlite"
+        let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.travsim.FCMAppTut")!
+        let storeUrl =  directory.appendingPathComponent(storeName)
+        do {
+            //MARK: for LightWeight Migration ---
+            let options = [
+                NSMigratePersistentStoresAutomaticallyOption : true,
+                NSInferMappingModelAutomaticallyOption : true,
+            ]
+            // -------
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: nil)
+        } catch {
+            fatalError("unable to add store")
+        }
+        return coordinator
+    }()
+    
+    //MARK: - Save
+    
+    func saveChanges() {
+        mainManagedObjectContext.perform {
+            do {
+                if self.mainManagedObjectContext.hasChanges {
+                    try self.mainManagedObjectContext.save()
+                }
+            } catch {
+                print("saving error : child : - \(error.localizedDescription)")
+            }
+            do {
+                if self.privateManagedObjectContext.hasChanges {
+                    try self.privateManagedObjectContext.save()
+                }
+            } catch {
+                print("saving error : parent : - \(error.localizedDescription)")
             }
         }
     }
     
-    func saveContact(payloadData: Data){
-        let contact = ContactsCD(context: persistentContainer.viewContext)
-        do{
-            let payload = try decoder.decode(ContactsPayload.self, from: payloadData)
-            let payloadData = Data(payload.payload.utf8)
-            let payloadArr = try decoder.decode(Contacts.self, from: payloadData)
-            
-            contact.id = Int64(payloadArr.id)
-            contact.firstName = payloadArr.firstName
-            contact.lastName = payloadArr.lastName
-            contact.mobileNumbers = payloadArr.mobileNumbers
-            contact.emails = payloadArr.emails
-            saveData()
-        }catch {
-            print(error)
-        }
-        
+    //MARK: - Helper Methods
+    
+    @objc func saveChanges(notificaiton: Notification) {
+        saveChanges()
     }
-    
-    func deleteContact(payloadData: Data){
-        do{
-            let request = NSFetchRequest<ContactsCD>(entityName: "ContactsCD")
-            let payload = try decoder.decode(Payload.self, from: payloadData)
-            
-           
-            
-            let payloadData = Data(payload.payload.utf8)
-            let payloadArr = try decoder.decode([INTS].self, from: payloadData)
-            
-            print("Your Deleted payload \(payloadArr)")
-            
-            request.predicate = NSPredicate(format: "id == %i", Int64(payloadArr[0].payloadID))
-
-            let deleted = try persistentContainer.viewContext.fetch(request)
-           
-            persistentContainer.viewContext.delete(deleted[0])
-            
-            saveData()
-            
-        }catch {
-            print(error)
-        }
-        
+    private func setupNotificationHandling() {
+        NotificationCenter.default.addObserver(self, selector: #selector(saveChanges(notificaiton:)), name:  UIApplication.willTerminateNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveChanges(notificaiton:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
-    
-    func updateContact(payloadData: Data){
-        do{
-            let request = NSFetchRequest<ContactsCD>(entityName: "ContactsCD")
-            
-            let payload = try decoder.decode(ContactsPayload.self, from: payloadData)
-            let payloadData = Data(payload.payload.utf8)
-            let payloadArr = try decoder.decode(Contacts.self, from: payloadData)
-            
-            request.predicate = NSPredicate(format: "id == %i", Int64(payloadArr.id))
-
-            let updated = try persistentContainer.viewContext.fetch(request)
-            
-           
-            updated[0].emails = payloadArr.emails
-            
-            saveData()
-            
-        }catch {
-            print(error)
-        }
-        
-    }
-    
-    func testAdd()
-    {
-        let contact = ContactsCD(context: persistentContainer.viewContext)
-        
-        var numberList = [NumberList]()
-        var emailList = [EmailList]()
-        
-        numberList.append(NumberList(number: "0838642247", type: "Mobile"))
-        numberList.append(NumberList(number: "0735563333", type: "Work"))
-        
-        emailList.append(EmailList(email: "ash@dee.co.za", type: "Mobile"))
-        emailList.append(EmailList(email: "dube@yiya.co.za", type: "Work"))
-        
-        contact.id = 1
-        contact.firstName = "Ashley"
-        contact.lastName = "Dube"
-        contact.mobileNumbers = MobileNumbers(numberList: numberList)
-        contact.emails = Emails(emailList: emailList)
-        saveData()
-    }
-    
-    func saveData(){
-        do{
-            try persistentContainer.viewContext.save()
-            ContentViewModel.shared.fetchContacts()
-        }catch{
-            print("Error: \(error) \n Localised Error: \(error.localizedDescription)")
-        }
-    }
-    
-    
 }

@@ -19,6 +19,7 @@
  */
 
 import Foundation
+@available(iOSApplicationExtension 13.0, *)
 class FCMNotificationsHandler: ObservableObject{
     static let shared = FCMNotificationsHandler()
     
@@ -45,6 +46,8 @@ class FCMNotificationsHandler: ObservableObject{
     
     func receivedNotification(withUserInfo notificationPayload: [AnyHashable : Any]){
         let decoder = JSONDecoder()
+        
+        print("receivedNotification invoked")
 
         do {
 
@@ -56,17 +59,16 @@ class FCMNotificationsHandler: ObservableObject{
             print("Your decoded FCM payload: \(payload)")
             
             
-            if let type = payload.type,
-               let topic = payload.topic{
+            if let topic = payload.topic{
                 
-                switch payload.topic{
+                switch topic{
                     
-                    case TOPIC_CONTACTS:
-                        updateContact(withData: myData)
+//                    case TOPIC_CONTACTS:
+//                        updateContact(withData: myData)
 //                    case TOPIC_SUBS:
 //                        updateSubscription()
-//                    case TOPIC_CALL_LOGS:
-//                        updateCallLog()
+                    case TOPIC_CALL_LOGS:
+                        updateCallLog(withData: myData)
 //                    case TOPIC_ORDERS_INVOICES:
 //                        updateInvoice()
 //                    case TOPIC_BILLING :
@@ -97,15 +99,106 @@ class FCMNotificationsHandler: ObservableObject{
     }
     
     //MARK: Contacts Notifications
-    func updateContact(withData data: Data){
+    
+//    func updateContact(withData data: Data){
+//        
+//        do {
+//            
+//            let payload = try decoder.decode(TypeResponse.self, from: data)
+//           
+//            if payload.type == TYPE_CREATED{
+//                CoreDataManagerOld.shared.saveContact(payloadData: data)
+//            }
+//            if payload.type == TYPE_UPDATED{
+//                CoreDataManagerOld.shared.updateContact(payloadData: data)
+//            }
+////            if payload.type == TYPE_DELETED{
+////                CoreDataManager.shared.deleteContact(payloadData: data)
+////            }
+////            
+//            
+//            
+//        }catch {
+//            print(error)
+//        }
+//        
+//        
+//        //contact update
+//        /*
+//        let decoder = JSONDecoder()
+//
+//        do {
+//
+//            let data = try JSONSerialization.data(withJSONObject: notificationPayload, options: [])
+//            let myString = String(data: data, encoding: .utf8)!
+//            let myData = Data(myString.utf8)
+//            let payload = try decoder.decode(Payload.self, from: myData)
+//            
+//            print("Your decoded FCM payload: \(payload)")  // Up until this stage, I decode the JSON normally
+//            
+//            
+//            /*
+//                 Since the payload object is read as String, I cast it to Data in utf8
+//                 then I decode it as an Array of Objects and it works
+//             */
+//            
+//            let payloadData = Data(payload.payload.utf8)
+//            let payloadArr = try decoder.decode([INTS].self, from: payloadData)
+//
+//            print("payloadArr: \(payloadArr)")
+//            
+//            ContentViewModel.shared.firstName = "Ashley"
+//            ContentViewModel.shared.saveContact()
+//            
+//        } catch {
+//            print(error)
+//        }
+//        */
+//    }
+    
+    
+    //MARK: Subscriptions Notifications
+    //MARK: Call History Notifications
+    
+    func updateCallLog(withData data: Data){
         
         do {
+            let coreDataManager = CoreDataManager(modelName: "ContactsCD")
+            let payload = try decoder.decode(TypeResponse.self, from: data)
+           
+            if payload.type == TYPE_CREATED{
+                
+//                let logData = (try? JSONSerialization.data(withJSONObject: payload.payload, options: [])) ?? Data()
+//
+//                let logPayload = try decoder.decode(CallHistory.self, from: logData)
+                
+                let msg = ContactsCD(context: coreDataManager.mainManagedObjectContext)
+//                msg.id = Int64(logPayload.callTypeEventID)
+//                msg.firstName = logPayload.callee.number
+//                msg.lastName = logPayload.caller.number
+                msg.id = 66
+                msg.firstName = "name"
+                msg.lastName = "surname"
+                coreDataManager.saveChanges()
+                
+                
+                
+//                let log = CallLogsCD(context: coreDataManager.mainManagedObjectContext)
+//
+//
+//
+//                coreDataManager.saveChanges()
+                
+//                CoreDataManagerOld.shared.saveContact(payloadData: data)
+            }
+//            if payload.type == TYPE_UPDATED{
+//                CoreDataManagerOld.shared.updateContact(payloadData: data)
+//            }
+//            if payload.type == TYPE_DELETED{
+//                CoreDataManager.shared.deleteContact(payloadData: data)
+//            }
+//
             
-//            let payload = try decoder.decode(ContactsPayload.self, from: data)
-//            let payloadData = Data(payload.payload.utf8)
-//            let payloadArr = try decoder.decode(Contacts.self, from: payloadData)
-            
-            CoreDataManager.shared.updateContact(payloadData: data)
             
         }catch {
             print(error)
@@ -144,9 +237,6 @@ class FCMNotificationsHandler: ObservableObject{
         }
         */
     }
-    
-    //MARK: Subscriptions Notifications
-    //MARK: Call History Notifications
     //MARK: Orders and Invoices Notifications
     //MARK: Billing Notifications
     //MARK: Number verification status due to KYC Notifications
